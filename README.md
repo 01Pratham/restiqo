@@ -1,7 +1,8 @@
 <div align="center">
-  <img src="ui/logo.svg" alt="Api Scout Logo" width="120" height="120">
+  <img src="https://raw.githubusercontent.com/01Pratham/api-scout/main/ui-src/public/logo.svg" alt="api-scout logo" width="120" height="120">
   <h1>api-scout</h1>
 </div>
+
 
 A lightweight, auto-generating Postman-like UI for Express.js applications. Capture requests automatically, manage collections, and test your APIs with a premium interface directly from your browser.
 

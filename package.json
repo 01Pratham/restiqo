@@ -12,7 +12,7 @@
     ],
     "scripts": {
         "build:lib": "tsc",
-        "build:ui": "cd ui-src && npm run build && cd .. && rm -rf ui && mv ui-src/out ui",
+        "build:ui": "cd ui-src && npm run build",
         "build": "npm run build:lib && npm run build:ui",
         "lint": "eslint src",
         "lint:fix": "eslint src --fix",

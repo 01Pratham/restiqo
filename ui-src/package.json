@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && cd .. && rm -rf ui && mv ui-src/out ui",
     "start": "next start",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix"
@@ -35,10 +35,10 @@
     "eslint": "^9.0.0",
     "eslint-config-next": "^16.1.6",
     "eslint-import-resolver-typescript": "^3.6.1",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-jsx-a11y": "^6.8.0",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jsx-a11y": "^6.10.0",
+    "eslint-plugin-react": "^7.37.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
     "typescript": "^5.3.3"
   }
 }
