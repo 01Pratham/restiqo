@@ -497,13 +497,13 @@ export const Sidebar = ({
                     >
                         <Image
                             src={`${process.env.NEXT_PUBLIC_BASE_PATH || '/api-tester'}/logo.svg`}
-                            alt="Vibe Test Logo"
+                            alt="Api Scout Logo"
                             width={40}
                             height={40}
                         />
                     </Box>
                     <Heading size="md" bgGradient="linear(to-r, purple.500, blue.500)" bgClip="text" letterSpacing="tight">
-                        Vibe Test
+                        Api Scout
                     </Heading>
                 </HStack>
                 <HStack spacing={1}>

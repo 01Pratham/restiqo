@@ -13,7 +13,7 @@ import type {
 } from './interfaces';
 
 /**
- * Storage provider interface for vibe-test
+ * Storage provider interface for api-scout
  * Defines the contract for all storage implementations
  */
 export interface IStorageProvider {

@@ -1,5 +1,5 @@
 {
-    "name": "vibe-test",
+    "name": "@api-scout/lib",
     "version": "1.0.0",
     "description": "Auto-generating Postman-like UI for Express applications",
     "main": "dist/index.js",
@@ -44,12 +44,12 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/01Pratham/vibe-test.git"
+        "url": "git+https://github.com/01Pratham/api-scout.git"
     },
     "bugs": {
-        "url": "https://github.com/01Pratham/vibe-test/issues"
+        "url": "https://github.com/01Pratham/api-scout/issues"
     },
-    "homepage": "https://github.com/01Pratham/vibe-test#readme",
+    "homepage": "https://github.com/01Pratham/api-scout#readme",
     "funding": {
         "type": "github",
         "url": "https://github.com/sponsors/01Pratham"

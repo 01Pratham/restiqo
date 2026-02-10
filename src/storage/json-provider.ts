@@ -24,7 +24,7 @@ interface StorageData {
 }
 
 /**
- * File-based JSON storage provider for vibe-test.
+ * File-based JSON storage provider for api-scout.
  */
 export class JsonStorageProvider implements IStorageProvider {
     private cachePath: string;
@@ -35,7 +35,7 @@ export class JsonStorageProvider implements IStorageProvider {
     private initPromise: Promise<void> | null = null;
 
     constructor(storagePath?: string, customizationPath?: string, private autoCollectionName: string = 'Auto-Captured') {
-        const defaultPath = path.join(process.cwd(), 'node_modules', '@vibe-test', 'lib', '.cache', 'api-tester-db.json');
+        const defaultPath = path.join(process.cwd(), 'node_modules', '@api-scout', 'lib', '.cache', 'api-tester-db.json');
         this.cachePath = storagePath ?? defaultPath;
         this.customPath = customizationPath;
     }

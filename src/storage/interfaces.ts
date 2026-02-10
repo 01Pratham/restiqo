@@ -1,5 +1,5 @@
 /**
- * Core data interfaces for vibe-test storage
+ * Core data interfaces for api-scout storage
  */
 
 /**

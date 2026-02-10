@@ -1,6 +1,6 @@
 <div align="center">
-  <img src="ui/logo.svg" alt="Vibe Test Logo" width="120" height="120">
-  <h1>vibe-test</h1>
+  <img src="ui/logo.svg" alt="Api Scout Logo" width="120" height="120">
+  <h1>api-scout</h1>
 </div>
 
 A lightweight, auto-generating Postman-like UI for Express.js applications. Capture requests automatically, manage collections, and test your APIs with a premium interface directly from your browser.
@@ -20,26 +20,26 @@ A lightweight, auto-generating Postman-like UI for Express.js applications. Capt
 ## Installation
 
 ```bash
-npm install vibe-test
+npm install api-scout
 ```
 
 ## Quick Start
 
 ```typescript
 import express from 'express';
-import { vibeTest } from 'vibe-test';
+import { apiScout } from 'api-scout';
 
 const app = express();
 
-// Mount Vibe Test at /api-tester
-app.use(vibeTest({
+// Mount Api Scout at /api-tester
+app.use(apiScout({
     app,
     path: '/api-tester',
     autoCapture: true // Automatically capture all traffic
 }));
 
 app.listen(3000, () => {
-    console.log('Vibe Test available at http://localhost:3000/api-tester');
+    console.log('Api Scout available at http://localhost:3000/api-tester');
 });
 ```
 
@@ -50,7 +50,7 @@ app.listen(3000, () => {
 By default, the library uses In-Memory storage (data is lost on restart). You can provide specific paths for JSON storage:
 
 ```typescript
-app.use(vibeTest({
+app.use(apiScout({
     app,
     storagePath: './data/cache.json',
     customizationPath: './data/custom.json'
@@ -62,7 +62,7 @@ app.use(vibeTest({
 Add your own authentication middleware to protect the tester:
 
 ```typescript
-app.use(vibeTest({
+app.use(apiScout({
     app,
     authMiddleware: (req, res, next) => {
         if (req.user?.isAdmin) return next();
@@ -73,7 +73,7 @@ app.use(vibeTest({
 
 ### Validation Support
 
-vibe-test automatically detects and parses request bodies from popular validation libraries:
+api-scout automatically detects and parses request bodies from popular validation libraries:
 - **Zod**: Robust support for `z.object`, `z.array`, etc.
 - **Joi**: Detects Joi objects and extracts field keys.
 - **Yup**: Full support for Yup's object schema tree.
@@ -82,7 +82,7 @@ vibe-test automatically detects and parses request bodies from popular validatio
 If you use a custom validation wrapper, you can provide a `schemaExtractor`:
 
 ```typescript
-app.use(vibeTest({
+app.use(apiScout({
     app,
     schemaExtractors: [
         (handle: any) => {
