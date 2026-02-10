@@ -514,8 +514,27 @@ function setupAuthRoutes(router: Router): void {
 
 function setupStaticRoutes(router: Router): void {
     const uiPath = path.join(__dirname, '../ui');
-    router.use('/', expressStatic(uiPath));
+
+    // Serve static files from the ui directory
+    router.use(expressStatic(uiPath, {
+        index: false, // Don't serve index.html automatically, we handle it below
+        immutable: true,
+        maxAge: '1d'
+    }));
+
+    // Serve index.html for the root path
+    router.get('/', (req: Request, res: Response) => {
+        res.sendFile(path.join(uiPath, 'index.html'));
+    });
+
+    // Fallback for SPA routing - serve index.html for any other GET requests that are not API calls
     router.get('*', (req: Request, res: Response) => {
+        // If it looks like a file request (has an extension), but wasn't found by expressStatic
+        // we should probably return a 404 instead of index.html to avoid MIME type errors
+        if (req.path.includes('.') && !req.path.endsWith('.html')) {
+            res.status(404).end();
+            return;
+        }
         res.sendFile(path.join(uiPath, 'index.html'));
     });
 }
